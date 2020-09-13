@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "glowing",
+  "version": "${version}",
+  "name": "Glowing",
+  "description": "",
+  "authors": [
+    "Vemu"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/glowing/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "pl.vemu.glowing.client.GlowingClient"
+    ],
+    "main": [
+      "pl.vemu.glowing.Glowing"
+    ]
+  },
+  "mixins": [
+    "glowing.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.9.3+build.207",
+    "fabric": "*",
+    "minecraft": "1.16.3"
+  }
+}

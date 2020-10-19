@@ -1,0 +1,20 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "E",
+    "E",
+    "S"
+  ],
+  "key": {
+    "E": {
+      "item": "diamold:diamold_ingot"
+    },
+    "S": {
+      "item": "stick"
+    }
+  },
+  "result": {
+    "item": "diamold:diamold_sword",
+    "count": 1
+  }
+}

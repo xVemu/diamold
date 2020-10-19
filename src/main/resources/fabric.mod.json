@@ -1,30 +1,34 @@
 {
   "schemaVersion": 1,
-  "id": "glowing",
-  "version": "${version}",
-  "name": "Glowing",
-  "description": "",
+  "id": "diamold",
+  "version": "1.0.0",
+  "name": "Diamold",
+  "description": "Simple mod that adds mixed diamond and gold ingot.",
   "authors": [
     "Vemu"
   ],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/glowing/icon.png",
-  "environment": "client",
+  "icon": "assets/diamold/icon.png",
+  "environment": "*",
   "entrypoints": {
     "client": [
-      "pl.vemu.glowing.client.GlowingClient"
+      "pl.vemu.diamold.client.DiamoldClientKt::init"
     ],
     "main": [
-      "pl.vemu.glowing.Glowing"
+      "pl.vemu.diamold.DiamoldKt::init"
     ]
   },
   "mixins": [
-    "glowing.mixins.json"
+    "diamold.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.9.3+build.207",
+    "fabricloader": ">=0.8.7",
     "fabric": "*",
-    "minecraft": "1.16.3"
+    "fabric-language-kotlin": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "flamingo": "*"
   }
 }

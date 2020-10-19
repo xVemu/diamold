@@ -1,0 +1,21 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "diamond"
+    },
+    {
+      "item": "gold_ingot"
+    },
+    {
+      "item": "diamond"
+    },
+    {
+      "item": "gold_ingot"
+    }
+  ],
+  "result": {
+    "item": "diamold:diamold_ingot",
+    "count": 2
+  }
+}

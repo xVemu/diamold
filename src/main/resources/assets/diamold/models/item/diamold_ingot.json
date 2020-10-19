@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "diamold:item/diamold_ingot"
+  }
+}

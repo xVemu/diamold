@@ -1,0 +1,36 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "diamold:diamold_ingot"
+    },
+    {
+      "item": "diamold:diamold_ingot"
+    },
+    {
+      "item": "diamold:diamold_ingot"
+    },
+    {
+      "item": "diamold:diamold_ingot"
+    },
+    {
+      "item": "diamold:diamold_ingot"
+    },
+    {
+      "item": "diamold:diamold_ingot"
+    },
+    {
+      "item": "diamold:diamold_ingot"
+    },
+    {
+      "item": "diamold:diamold_ingot"
+    },
+    {
+      "item": "diamold:diamold_ingot"
+    }
+  ],
+  "result": {
+    "item": "diamold:diamold_block",
+    "count": 1
+  }
+}

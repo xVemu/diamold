@@ -1,20 +1,17 @@
 {
   "type": "crafting_shaped",
   "pattern": [
-    "II ",
-    " S ",
-    " S "
+    "III",
+    "I I",
+    "I I"
   ],
   "key": {
     "I": {
       "item": "diamold:diamold_ingot"
-    },
-    "S": {
-      "item": "stick"
     }
   },
   "result": {
-    "item": "diamold:diamold_hoe",
+    "item": "diamold:diamold_leggings",
     "count": 1
   }
 }

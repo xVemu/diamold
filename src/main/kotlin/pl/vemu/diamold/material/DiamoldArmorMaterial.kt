@@ -5,7 +5,7 @@ import net.minecraft.item.ArmorMaterial
 import net.minecraft.recipe.Ingredient
 import net.minecraft.sound.SoundEvent
 import net.minecraft.sound.SoundEvents
-import pl.vemu.diamold.items.DiamoldIngot
+import pl.vemu.diamold.items.DiamoldItems
 
 object DiamoldArmorMaterial : ArmorMaterial {
 
@@ -23,7 +23,7 @@ object DiamoldArmorMaterial : ArmorMaterial {
     //TODO sound effect
     override fun getEquipSound(): SoundEvent = SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND
 
-    override fun getRepairIngredient(): Ingredient = Ingredient.ofItems(DiamoldIngot)
+    override fun getRepairIngredient(): Ingredient = Ingredient.ofItems(DiamoldItems.DiamoldIngot)
 
     override fun getName(): String = "diamold"
 

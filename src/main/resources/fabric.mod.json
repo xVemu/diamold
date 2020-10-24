@@ -3,32 +3,40 @@
   "id": "diamold",
   "version": "1.0.0",
   "name": "Diamold",
-  "description": "Simple mod that adds mixed diamond and gold ingot.",
+  "description": "Simple mod that adds mixed diamond and gold.",
   "authors": [
     "Vemu"
   ],
-  "contact": {},
+  "contact": {
+    "email": "kamilox26@gmail.com",
+    "issues": "https://github.com/xVemu/diamold/issues",
+    "sources": "https://github.com/xVemu/diamold"
+  },
   "license": "MIT",
   "icon": "assets/diamold/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "pl.vemu.diamold.client.DiamoldClientKt::init"
-    ],
     "main": [
-      "pl.vemu.diamold.DiamoldKt::init"
+      {
+        "adapter": "kotlin",
+        "value": "pl.vemu.diamold.DiamoldKt::init"
+      }
     ]
   },
-  "mixins": [
-    "diamold.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=0.8.7",
     "fabric": "*",
     "fabric-language-kotlin": "*",
     "minecraft": "1.16.x"
   },
-  "suggests": {
-    "flamingo": "*"
+  "recommends": {
+    "modupdater": ">=1.1.7"
+  },
+  "custom": {
+    "modupdater": {
+      "strategy": "github",
+      "owner": "xVemu",
+      "repository": "diamold"
+    }
   }
 }

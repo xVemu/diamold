@@ -1,12 +1,12 @@
 {
   "type": "crafting_shaped",
   "pattern": [
-    "EE ",
-    "ES ",
+    "II ",
+    "IS ",
     " S "
   ],
   "key": {
-    "E": {
+    "I": {
       "item": "diamold:diamold_ingot"
     },
     "S": {

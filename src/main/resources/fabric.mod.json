@@ -28,15 +28,5 @@
     "fabric": "*",
     "fabric-language-kotlin": "*",
     "minecraft": "1.16.x"
-  },
-  "recommends": {
-    "modupdater": ">=1.1.7"
-  },
-  "custom": {
-    "modupdater": {
-      "strategy": "github",
-      "owner": "xVemu",
-      "repository": "diamold"
-    }
   }
 }

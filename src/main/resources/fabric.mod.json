@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
   "id": "diamold",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "Diamold",
   "description": "Simple mod that adds mixed diamond and gold.",
   "authors": [
     "Vemu"
   ],
   "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/diamold",
     "email": "kamilox26@gmail.com",
     "issues": "https://github.com/xVemu/diamold/issues",
     "sources": "https://github.com/xVemu/diamold"

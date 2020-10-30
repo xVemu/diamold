@@ -66,4 +66,8 @@ object DiamoldItems {
     object DiamoldBoots : ArmorItem(DiamoldArmorMaterial, EquipmentSlot.FEET, settings), JsonName {
         override val jsonName = "diamold_boots"
     }
+
+    object DiamoldSword : SwordItem(DiamoldMaterial, 3, -2.4F, Settings().group(diamoldGroup)), JsonName {
+        override val jsonName = "diamold_sword"
+    }
 }

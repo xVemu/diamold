@@ -18,6 +18,7 @@ minecraft {
 
 repositories {
     maven { url = "https://maven.fabricmc.net/" }
+    maven { url = "https://server.bbkr.space/artifactory/libs-release/" }
 }
 
 curseforge {
@@ -57,6 +58,8 @@ dependencies {
 
     modImplementation "net.fabricmc:fabric-language-kotlin:${fabric_kotlin_version}"
 
+    modImplementation 'io.github.cottonmc:LibCD:3.0.3+1.16.3'
+    include 'io.github.cottonmc:LibCD:3.0.3+1.16.3'
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
 }

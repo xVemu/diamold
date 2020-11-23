@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "diamold",
-  "version": "1.0.1",
+  "version": "${version}",
   "name": "Diamold",
   "description": "Simple mod that adds mixed diamond and gold.",
   "authors": [
@@ -29,5 +29,8 @@
     "fabric": "*",
     "fabric-language-kotlin": "*",
     "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "crushing_hammers": ">=1.0.3"
   }
 }

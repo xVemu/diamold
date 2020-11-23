@@ -70,4 +70,9 @@ object DiamoldItems {
     object DiamoldSword : SwordItem(DiamoldMaterial, 3, -2.4F, Settings().group(diamoldGroup)), JsonName {
         override val jsonName = "diamold_sword"
     }
+
+
+    object DiamoldHammer : PickaxeItem(DiamoldMaterial, 1, -2.8F, settings), JsonName {
+        override val jsonName = "diamold_hammer"
+    }
 }

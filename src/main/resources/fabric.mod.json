@@ -24,11 +24,20 @@
       }
     ]
   },
+  "custom": {
+    "modupdater": {
+      "strategy": "curseforge",
+      "projectID": 415159
+    }
+  },
   "depends": {
     "fabricloader": ">=0.8.7",
     "fabric": "*",
     "fabric-language-kotlin": "*",
     "minecraft": "1.16.x"
+  },
+  "recommends": {
+    "modupdater": ">=1.1.7"
   },
   "suggests": {
     "crushing_hammers": ">=1.0.3"

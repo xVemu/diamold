@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "diamold:diamold_pickaxe"
+    "diamold:diamold_pickaxe",
+    "diamold:diamold_hammer"
   ]
 }

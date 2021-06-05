@@ -3,6 +3,7 @@ plugins {
     id 'maven-publish'
     id "org.jetbrains.kotlin.jvm"
     id 'com.matthewprenger.cursegradle'
+    id "com.modrinth.minotaur" version "1.1.0"
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -12,13 +13,27 @@ archivesBaseName = mod_id
 version = "${project.mod_version}+${project.minecraft_version}"
 group = maven_group
 
-minecraft {
-}
-
 
 repositories {
     maven { url = "https://maven.fabricmc.net/" }
     maven { url = "https://server.bbkr.space/artifactory/libs-release/" }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
+
+
+    modImplementation "net.fabricmc:fabric-loader:${loader_version}"
+    // Fabric API. This is technically optional, but you probably want it anyway.
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
+
+    modImplementation "net.fabricmc:fabric-language-kotlin:${fabric_kotlin_version}"
+
+    modImplementation 'io.github.cottonmc:LibCD:3.0.3+1.16.3'
+    include 'io.github.cottonmc:LibCD:3.0.3+1.16.3'
+    // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
+    // You may need to force-disable transitiveness on them.
 }
 
 curseforge {
@@ -47,28 +62,30 @@ curseforge {
     }
 }
 
-dependencies {
-    minecraft "com.mojang:minecraft:${minecraft_version}"
-    mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
+import com.modrinth.minotaur.TaskModrinthUpload
 
-
-    modImplementation "net.fabricmc:fabric-loader:${loader_version}"
-    // Fabric API. This is technically optional, but you probably want it anyway.
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
-
-    modImplementation "net.fabricmc:fabric-language-kotlin:${fabric_kotlin_version}"
-
-    modImplementation 'io.github.cottonmc:LibCD:3.0.3+1.16.3'
-    include 'io.github.cottonmc:LibCD:3.0.3+1.16.3'
-    // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
-    // You may need to force-disable transitiveness on them.
+task publishModrinth(type: TaskModrinthUpload) {
+    def props = new Properties()
+    file("curseforge.properties").withInputStream { props.load(it) }
+    token = props."modrinth" // Use an environment property if releasing your source code on GitHub!
+    projectId = 'w1QfAiDE' // The ID of your modrinth project, slugs will not work.
+    versionNumber = mod_version // The version of the mod to upload.
+    uploadFile = remapJar // This links to a task that builds your mod jar and sets "uploadFile" to the mod jar.
+    changelog = new File('changelog.md').text
+    addGameVersion(minecraft_version) // Any minecraft version.
+    addLoader('fabric') // Can be fabric or forge. Modrinth will support liteloader and rift at a later date.
 }
 
 processResources {
     inputs.property "version", version
 
-    filesMatching("fabric.mod.json") {
-        expand "version": version
+    from(sourceSets.main.resources.srcDirs) {
+        include "fabric.mod.json"
+        expand "version": project.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude "fabric.mod.json"
     }
 }
 
@@ -88,7 +105,9 @@ tasks.withType(JavaCompile) {
 }*/
 
 jar {
-    from "LICENSE"
+    from("LICENSE") {
+        rename { "${it}_${mod_id}" }
+    }
 }
 
 // configure the maven publication

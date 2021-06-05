@@ -18,7 +18,7 @@ object DiamoldArmorMaterial : ArmorMaterial {
 
     override fun getProtectionAmount(slot: EquipmentSlot?): Int = protectionAmounts[slot!!.entitySlotId]
 
-    override fun getEnchantability(): Int = 10
+    override fun getEnchantability(): Int = 25
 
     //TODO sound effect
     override fun getEquipSound(): SoundEvent = SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND

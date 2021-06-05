@@ -13,8 +13,8 @@ fun init() {
     DiamoldItems.arrayOfItems.forEach(::registerItem)
     registerBlock(DiamoldBlock)
     if (FabricLoader.getInstance().isModLoaded("crushing_hammers")) {
-        registerItem(DiamoldItems.DiamoldHammer)
-    } //TODO drop for block
+        registerItem(DiamoldItems.DiamoldHammer) //TODO drop for block and netherite hammer craftable
+    }
 }
 
 private fun registerItem(item: Item) {

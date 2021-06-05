@@ -13,7 +13,7 @@ object DiamoldMaterial : ToolMaterial {
 
     override fun getMiningLevel(): Int = 3
 
-    override fun getEnchantability(): Int = 10
+    override fun getEnchantability(): Int = 22
 
     override fun getRepairIngredient(): Ingredient = Ingredient.ofItems(DiamoldItems.DiamoldIngot)
 }

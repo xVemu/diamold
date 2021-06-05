@@ -1,1 +1,2 @@
-* fixed pickaxes when mod was installed
+* changed enchantability to gold level
+* added for netherite tools and armor

@@ -1,2 +1,1 @@
-* changed enchantability to gold level
-* added for netherite tools and armor
+* added loot from block when destroyed by hammer

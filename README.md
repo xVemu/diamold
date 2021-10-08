@@ -13,3 +13,4 @@ Adds weapons, tools and armor with gold's efficiency, diamond's durability and p
 * Diamold Chestplate
 * Diamold Leggings
 * Diamold Boots
+* Diamold Hammer if Crushing Hammers[https://www.curseforge.com/minecraft/mc-mods/crushing-hammers] is installed

@@ -1,1 +1,1 @@
-* added loot from block when destroyed by hammer
+* added Russian translation, made by [Disketaa](https://github.com/Disketaa)

@@ -29,8 +29,8 @@ dependencies {
 
     modImplementation "net.fabricmc:fabric-language-kotlin:${fabric_kotlin_version}"
 
-    modImplementation 'io.github.cottonmc:LibCD:3.0.3+1.16.3'
-    include 'io.github.cottonmc:LibCD:3.0.3+1.16.3'
+    modImplementation "io.github.cottonmc:LibCD:${libcd}"
+    include "io.github.cottonmc:LibCD:${libcd}"
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
 }
@@ -64,6 +64,7 @@ curseforge {
 import com.modrinth.minotaur.TaskModrinthUpload
 
 task publishModrinth(type: TaskModrinthUpload) {
+    group = "upload"
     def props = new Properties()
     file("curseforge.properties").withInputStream { props.load(it) }
     token = props."modrinth" // Use an environment property if releasing your source code on GitHub!

@@ -1,0 +1,15 @@
+{
+  "itemGroup.diamold.group": "Диамоулд",
+  "item.diamold.diamold_ingot": "Диамоулдный слиток",
+  "item.diamold.diamold_sword": "Диамоулдный меч",
+  "item.diamold.diamold_pickaxe": "Диамоулдная кирка",
+  "item.diamold.diamold_axe": "Диамоулдный топор",
+  "item.diamold.diamold_shovel": "Диамоулдная лопата",
+  "item.diamold.diamold_hoe": "Диамоулдная мотыга",
+  "item.diamold.diamold_hammer": "Диамоулдный молот",
+  "item.diamold.diamold_helmet": "Диамоулдный шлем",
+  "item.diamold.diamold_chestplate": "Диамоулдный нагрудник",
+  "item.diamold.diamold_leggings": "Диамоулдные поножи",
+  "item.diamold.diamold_boots": "Диамоулдные ботинки",
+  "block.diamold.diamold_block": "Диамоулдный блок"
+}

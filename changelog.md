@@ -1,1 +1,1 @@
-* added Russian translation, made by [Disketaa](https://github.com/Disketaa)
+* updated to 1.18

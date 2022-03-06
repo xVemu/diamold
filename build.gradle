@@ -11,6 +11,7 @@ targetCompatibility = JavaVersion.VERSION_17
 archivesBaseName = mod_id
 //noinspection GroovyAssignabilityCheck
 version = "${project.mod_version}+${project.minecraft_version}"
+//noinspection GroovyAssignabilityCheck
 group = maven_group
 
 

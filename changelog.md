@@ -1,1 +1,1 @@
-* updated to 1.18
+* fixes [#7](https://github.com/xVemu/diamold/issues/7)

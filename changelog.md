@@ -1,1 +1,1 @@
-* fixes [#7](https://github.com/xVemu/diamold/issues/7)
+Updated to Minecraft 1.19.

@@ -2,9 +2,9 @@ package pl.vemu.diamold.material
 
 import net.minecraft.item.ToolMaterial
 import net.minecraft.recipe.Ingredient
-import pl.vemu.diamold.items.DiamoldItems
+import pl.vemu.diamold.items.Items
 
-object DiamoldMaterial : ToolMaterial {
+object DiamoldToolMaterial : ToolMaterial {
     override fun getDurability(): Int = 1561
 
     override fun getMiningSpeedMultiplier(): Float = 12F
@@ -15,5 +15,5 @@ object DiamoldMaterial : ToolMaterial {
 
     override fun getEnchantability(): Int = 22
 
-    override fun getRepairIngredient(): Ingredient = Ingredient.ofItems(DiamoldItems.DiamoldIngot)
+    override fun getRepairIngredient(): Ingredient = Ingredient.ofItems(Items.Ingot.item)
 }

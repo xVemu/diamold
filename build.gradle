@@ -17,7 +17,6 @@ group = maven_group
 
 repositories {
     maven { url = "https://maven.fabricmc.net/" }
-    maven { url = "https://server.bbkr.space/artifactory/libs-release/" }
 }
 
 dependencies {
@@ -26,13 +25,10 @@ dependencies {
 
 
     modImplementation "net.fabricmc:fabric-loader:${loader_version}"
-    // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
 
     modImplementation "net.fabricmc:fabric-language-kotlin:${fabric_kotlin_version}"
 
-    // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
-    // You may need to force-disable transitiveness on them.
 }
 
 curseforge {
@@ -45,10 +41,10 @@ curseforge {
         changelogType = "markdown"
         changelog = file('changelog.md')
         releaseType = release_type
-        addGameVersion "1.18"
-        addGameVersion "1.18.1"
-        addGameVersion "1.18.2"
+        addGameVersion "1.19"
+        addGameVersion "1.19.1"
         addGameVersion "Fabric"
+        addGameVersion "Java 17"
 
         relations {
             requiredDependency 'fabric-api'
@@ -65,23 +61,21 @@ curseforge {
     }
 }
 
-import com.modrinth.minotaur.dependencies.ModDependency
-
 modrinth {
     def props = new Properties()
     file("curseforge.properties").withInputStream { props.load(it) }
     token = props."modrinth"
-    // This is the default. Remember to have the MODRINTH_TOKEN environment variable set or else this will fail, or set it to whatever you want - just make sure it stays private!
     projectId = "w1QfAiDE"
-    versionNumber = mod_version // You don't need to set this manually. Will fail if Modrinth has this version already
-    versionType = "release" // This is the default
-    uploadFile = remapJar // With Fabric Loom or Architectury Loom, this MUST be set to `remapJar` instead of `jar`!
-    gameVersions = ["1.18", "1.18.1", "1.18.2"] // Must be an array, even with only one version
+    versionNumber = mod_version
+    versionType = "${release_type}"
+    uploadFile = remapJar
+    gameVersions = ["1.19"]
     changelog = new File('changelog.md').text
-    loaders = ["fabric"] // Must also be an array - no need to specify this if you're using Fabric Loom or ForgeGradle
-    dependencies = [ // Yet another array. Create a new `ModDependency` or `VersionDependency` with two strings - the ID and the scope
-                     new ModDependency("P7dR8mSH", "required"), // Creates a new required dependency on Fabric API
-                     new ModDependency("Ha28R6CL", "required")]
+    loaders = ["fabric"]
+    dependencies {
+        required.project "fabric-api"
+        required.project "fabric-language-kotlin"
+    }
 }
 
 processResources {
@@ -92,9 +86,6 @@ processResources {
     }
 }
 
-// ensure that the encoding is set to UTF-8, no matter what the system default is
-// this fixes some edge cases with special characters not displaying correctly
-// see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
 tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
     //noinspection GroovyAssignabilityCheck

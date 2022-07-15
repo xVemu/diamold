@@ -1,5 +1,6 @@
 package pl.vemu.diamold
 
+import net.fabricmc.api.ModInitializer
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.block.Block
 import net.minecraft.util.Identifier
@@ -10,10 +11,12 @@ import pl.vemu.diamold.items.Hammer
 import pl.vemu.diamold.items.Items
 import java.io.File
 
-fun init() {
-    Items.values().forEach(::registerItem)
-    registerBlock(DiamoldBlock)
-    registerHammer()
+class Diamold : ModInitializer {
+    override fun onInitialize() {
+        Items.values().forEach(::registerItem)
+        registerBlock(DiamoldBlock)
+        registerHammer()
+    }
 }
 
 private fun registerItem(item: Items) {

@@ -18,10 +18,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      {
-        "adapter": "kotlin",
-        "value": "pl.vemu.diamold.DiamoldKt::init"
-      }
+        "pl.vemu.diamold.Diamold"
     ]
   },
   "custom": {
@@ -33,9 +30,8 @@
   "depends": {
     "fabricloader": ">=0.13.0",
     "fabric": "*",
-    "fabric-language-kotlin": "*",
-    "minecraft": "1.19.x",
-    "java": ">=17"
+    "minecraft": ">=1.16.5",
+    "java": ">=1.8"
   },
   "recommends": {
     "modupdater": ">=1.1.7"

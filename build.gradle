@@ -5,12 +5,12 @@ plugins {
     id "com.modrinth.minotaur" version "${minotaur}"
 }
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 archivesBaseName = mod_id
 //noinspection GroovyAssignabilityCheck
-version = "${project.mod_version}+${project.minecraft_version}"
+version = "${project.mod_version}"
 //noinspection GroovyAssignabilityCheck
 group = maven_group
 
@@ -23,12 +23,8 @@ dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
     mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
 
-
     modImplementation "net.fabricmc:fabric-loader:${loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
-
-    modImplementation "net.fabricmc:fabric-language-kotlin:${fabric_kotlin_version}"
-
 }
 
 curseforge {
@@ -41,14 +37,23 @@ curseforge {
         changelogType = "markdown"
         changelog = file('changelog.md')
         releaseType = release_type
+        addGameVersion "1.16.5"
+        addGameVersion "1.17"
+        addGameVersion "1.17.1"
+        addGameVersion "1.18"
+        addGameVersion "1.18.1"
+        addGameVersion "1.18.2"
         addGameVersion "1.19"
         addGameVersion "1.19.1"
+
         addGameVersion "Fabric"
+
         addGameVersion "Java 17"
+        addGameVersion "Java 11"
+        addGameVersion "Java 8"
 
         relations {
             requiredDependency 'fabric-api'
-            requiredDependency 'fabric-language-kotlin'
         }
         mainArtifact(remapJar)
         afterEvaluate {
@@ -69,12 +74,19 @@ modrinth {
     versionNumber = mod_version
     versionType = "${release_type}"
     uploadFile = remapJar
-    gameVersions = ["1.19"]
+    gameVersions = [
+            "1.16.5",
+            "1.17",
+            "1.17.1",
+            "1.18",
+            "1.18.1",
+            "1.18.2",
+            "1.19"
+    ]
     changelog = new File('changelog.md').text
     loaders = ["fabric"]
     dependencies {
         required.project "fabric-api"
-        required.project "fabric-language-kotlin"
     }
 }
 
@@ -89,7 +101,7 @@ processResources {
 tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
     //noinspection GroovyAssignabilityCheck
-    it.options.release = 17
+    it.options.release = 8
 }
 
 // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
@@ -105,6 +117,6 @@ jar {
     }
 }
 
-compileKotlin.kotlinOptions.jvmTarget = "17"
+compileKotlin.kotlinOptions.jvmTarget = "1.8"
 
 // if minecraft cant be imported try running gradlew --refresh-dependencies

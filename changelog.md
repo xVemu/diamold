@@ -1,1 +1,2 @@
-Updated to Minecraft 1.19.
+Now available for multiple minecraft versions!
+Also removed kotlin language dependency

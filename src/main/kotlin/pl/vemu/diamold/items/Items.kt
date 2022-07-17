@@ -1,12 +1,15 @@
 package pl.vemu.diamold.items
 
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
 import net.minecraft.entity.EquipmentSlot
 import net.minecraft.item.*
+import net.minecraft.util.Identifier
 import pl.vemu.diamold.blocks.DiamoldBlock
-import pl.vemu.diamold.group.diamoldGroup
 import pl.vemu.diamold.material.DiamoldArmorMaterial
 import pl.vemu.diamold.material.DiamoldToolMaterial
 
+private val diamoldGroup: ItemGroup =
+    FabricItemGroupBuilder.create(Identifier("diamold", "group")).icon { ItemStack(Items.Ingot.item) }.build()
 private val settings = Item.Settings().group(diamoldGroup)
 
 enum class Items(identifier: String, val item: Item) {

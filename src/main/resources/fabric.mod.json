@@ -18,7 +18,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-        "pl.vemu.diamold.Diamold"
+      "pl.vemu.diamold.Diamold"
     ]
   },
   "custom": {
@@ -28,15 +28,12 @@
     }
   },
   "depends": {
-    "fabricloader": ">=0.13.0",
+    "fabricloader": ">=0.14.0",
     "fabric": "*",
     "minecraft": ">=1.16",
     "java": ">=1.8"
   },
   "recommends": {
     "modupdater": ">=1.1.7"
-  },
-  "suggests": {
-    "crushing_hammers": ">=1.0.3"
   }
 }

@@ -5,13 +5,13 @@ import java.io.FileInputStream
 import java.util.*
 
 plugins {
-    kotlin("jvm") version "1.7.0"
-    id("fabric-loom") version "0.12-SNAPSHOT"
+    kotlin("jvm") version "1.8.21"
+    id("fabric-loom") version "1.2-SNAPSHOT"
     id("com.matthewprenger.cursegradle") version "1.4.0"
-    id("com.modrinth.minotaur") version "2.3.1"
+    id("com.modrinth.minotaur") version "2.7.5"
 }
 
-val modVersion = "1.4.0"
+val modVersion = "1.5.0"
 val type = "release"
 val props = Properties()
 props.load(FileInputStream("local.properties"))
@@ -26,12 +26,12 @@ base.archivesName.set("diamold")
 }*/
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.19")
-    mappings("net.fabricmc:yarn:1.19+build.4:v2")
+    minecraft("com.mojang:minecraft:1.19.2")
+    mappings("net.fabricmc:yarn:1.19.2+build.28:v2")
 
-    modImplementation("net.fabricmc:fabric-loader:0.14.8")
+    modImplementation("net.fabricmc:fabric-loader:0.14.19")
 
-    modImplementation("net.fabricmc.fabric-api:fabric-api:0.57.0+1.19")
+    modImplementation("net.fabricmc.fabric-api:fabric-api:0.76.0+1.19.2")
 }
 
 curseforge {
@@ -55,6 +55,7 @@ curseforge {
             "1.18.2",
             "1.19",
             "1.19.1",
+            "1.19.2",
             "Fabric",
             "Quilt",
             "Java 17",
@@ -96,7 +97,9 @@ modrinth {
         "1.18",
         "1.18.1",
         "1.18.2",
-        "1.19"
+        "1.19",
+        "1.19.1",
+        "1.19.2",
     )
     changelog.set(file("changelog.md").readText())
     loaders.addAll("fabric", "quilt")

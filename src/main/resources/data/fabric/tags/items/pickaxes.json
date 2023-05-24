@@ -1,10 +1,6 @@
 {
   "replace": false,
   "values": [
-    "diamold:diamold_pickaxe",
-    {
-      "id": "diamold:diamold_hammer",
-      "required": false
-    }
+    "diamold:diamold_pickaxe"
   ]
 }

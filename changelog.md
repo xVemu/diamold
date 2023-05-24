@@ -1,2 +1,2 @@
-Now available for multiple minecraft versions!
-Also removed kotlin language dependency
+Updated to Minecraft 1.19.2
+Removed support for Crushing Hammers

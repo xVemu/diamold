@@ -12,6 +12,7 @@ private val diamoldGroup: ItemGroup =
     FabricItemGroupBuilder.create(Identifier("diamold", "group")).icon { ItemStack(Items.Ingot.item) }.build()
 private val settings = Item.Settings().group(diamoldGroup)
 
+@Suppress("unused")
 enum class Items(identifier: String, val item: Item) {
     Ingot("ingot", Item(settings)),
     BlockItem("block", BlockItem(DiamoldBlock, settings)),
@@ -31,5 +32,3 @@ enum class Items(identifier: String, val item: Item) {
         this.identifier = "diamold_$identifier"
     }
 }
-
-object Hammer : PickaxeItem(DiamoldToolMaterial, 1, -2.8F, settings)

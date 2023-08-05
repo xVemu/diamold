@@ -1,6 +1,6 @@
 package pl.vemu.diamold.material
 
-import net.minecraft.entity.EquipmentSlot
+import net.minecraft.item.ArmorItem
 import net.minecraft.item.ArmorMaterial
 import net.minecraft.recipe.Ingredient
 import net.minecraft.sound.SoundEvent
@@ -13,10 +13,10 @@ object DiamoldArmorMaterial : ArmorMaterial {
     private val protectionAmounts = intArrayOf(3, 6, 8, 3)
     private val BASE_DURABILITY = intArrayOf(13, 15, 16, 11)
 
-    override fun getDurability(slot: EquipmentSlot): Int =
-        BASE_DURABILITY[slot.entitySlotId] * durabilityMultiplier
+    override fun getDurability(type: ArmorItem.Type): Int =
+        BASE_DURABILITY[type.equipmentSlot.entitySlotId] * durabilityMultiplier
 
-    override fun getProtectionAmount(slot: EquipmentSlot): Int = protectionAmounts[slot.entitySlotId]
+    override fun getProtection(type: ArmorItem.Type): Int = protectionAmounts[type.equipmentSlot.entitySlotId]
 
     override fun getEnchantability(): Int = 25
 

@@ -3,16 +3,16 @@ plugins {
     id("fabric-loom") version "1.3-SNAPSHOT"
 }
 
-version = "1.6.0"
+version = "1.6.1"
 group = "pl.vemu"
 base.archivesName = "diamold"
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.19.3")
-    mappings("net.fabricmc:yarn:1.19.3+build.5:v2")
+    minecraft("com.mojang:minecraft:1.19.4")
+    mappings("net.fabricmc:yarn:1.19.4+build.2:v2")
 
     modImplementation("net.fabricmc:fabric-loader:0.14.22")
-    modImplementation("net.fabricmc.fabric-api:fabric-api:0.76.1+1.19.3")
+    modImplementation("net.fabricmc.fabric-api:fabric-api:0.86.1+1.19.4")
     modImplementation("net.fabricmc:fabric-language-kotlin:1.10.8+kotlin.1.9.0")
 }
 

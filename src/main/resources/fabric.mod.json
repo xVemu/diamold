@@ -18,22 +18,25 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "pl.vemu.diamold.Diamold"
+      {
+        "adapter": "kotlin",
+        "value": "pl.vemu.diamold.DiamoldKt::init"
+      }
     ]
   },
   "custom": {
-    "modupdater": {
-      "strategy": "curseforge",
-      "projectID": 415159
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/da2CtxnFyU"
+      },
+      "update_checker": true
     }
   },
   "depends": {
     "fabricloader": ">=0.14.0",
     "fabric": "*",
-    "minecraft": ">=1.16",
-    "java": ">=1.8"
-  },
-  "recommends": {
-    "modupdater": ">=1.1.7"
+    "minecraft": ">=1.19.3",
+    "java": ">=17",
+    "fabric-language-kotlin": ">=1.10.0"
   }
 }

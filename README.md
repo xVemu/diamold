@@ -1,8 +1,8 @@
-<a href="https://www.curseforge.com/minecraft/mc-mods/fabric-api"><img src="https://i.imgur.com/Ol1Tcf8.png" width="150"></a>
+<a href="https://minecraft.curseforge.com/projects/fabric-language-kotlin"><img src="https://i.imgur.com/c1DH9VL.png" height="50" /></a>
 
 # diamold
 
-Adds weapons, tools and armor with gold's efficiency, diamond's durability and pretty nice look.
+Adds weapons, tools, and armor with gold's efficiency, diamond's durability and pretty nice look.
 
 ## Download
 

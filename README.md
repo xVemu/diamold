@@ -23,5 +23,3 @@ https://www.curseforge.com/minecraft/mc-mods/diamold
 * Diamold Boots
 
 ![Image of items](https://raw.githubusercontent.com/xVemu/diamold/master/2020-10-24_17.02.27.png)
-
-[![vemu](https://www.bisecthosting.com/partners/custom-banners/2dd3ad6c-1c26-4b6d-8915-de9e487edfb8.webp)](https://bisecthosting.com/vemu)
